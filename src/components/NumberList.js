@@ -4,7 +4,7 @@ import '../css/NumberList.css';
 function NumberList(props) {
 
     const handleChange = (e) => {
-        props.togglePending(props.type, e.target.id, e.target.checked);
+        props.togglePending(props.type, parseInt(e.target.id), e.target.checked);
     }
 
     const numbers = props.numbers.length

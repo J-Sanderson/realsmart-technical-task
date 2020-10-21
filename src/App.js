@@ -31,6 +31,27 @@ class App extends Component {
     });
   }
 
+  toggleUsed = (isUsed) => {
+
+    const toAdd = isUsed ? 'used' : 'unused';
+    const toRemove = isUsed ? 'unused' : 'used';
+
+    const added = this.state[toAdd]
+      .concat(this.state[`${toRemove}Pending`])
+      .sort((a, b) => a - b);
+
+    const removed = this.state[toRemove]
+      .filter(value => !this.state[`${toRemove}Pending`].includes(value) )
+      .sort((a, b) => a - b);
+
+    this.setState({
+      [toAdd]: added,
+      [toRemove]: removed,
+      [`${toRemove}Pending`]: [],
+    });
+
+  }
+
   render() {
     return (
       <div className="App">
@@ -44,8 +65,8 @@ class App extends Component {
             togglePending={this.togglePending}
           />
           <div className="controls">
-            <button>Add to used</button>
-            <button>Add to unused</button>
+            <button onClick={() => this.toggleUsed(true)}>Add to used</button>
+            <button onClick={() => this.toggleUsed(false)}>Add to unused</button>
           </div>
           <NumberList  
             type="used"
