@@ -1,0 +1,25 @@
+.App {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+header {
+  height: 5rem;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  height: calc(100vh - 6.5rem);
+}
+
+.container > div {
+  flex-grow: 1;
+}
+
+.container > .controls {
+  flex-grow: 0;
+  align-self: center;
+  text-align: center;
+}
