@@ -9,20 +9,19 @@ function NumberList(props) {
 
     const numbers = props.numbers.length
         ? (
-            <ul>
-                {
-                    props.numbers.map(number => {
-                        return (
-                            <li key={number}>
-                                <label>
-                                    <input type="checkbox" id={number} onChange={handleChange} />
-                                    <span>{number}</span>
-                                </label>
-                            </li>
-                        );
-                    })
-                }
-            </ul>
+            props.numbers.map(number => {
+                return (
+                    <label className="item">
+                        <input
+                            key={number} 
+                            type="checkbox" 
+                            id={number} 
+                            onChange={handleChange} 
+                        />
+                        <span>{number}</span>
+                    </label>
+                );
+            })
         )
         : (<p>There are no numbers</p>)
     return (

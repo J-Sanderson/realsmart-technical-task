@@ -18,7 +18,8 @@ header {
   flex-grow: 1;
 }
 
-.controls {
+.container > .controls {
+  flex-grow: 0;
   align-self: center;
   text-align: center;
 }
