@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/NumberList.css';
 
 function NumberList(props) {
     const numbers = props.numbers.length
@@ -15,7 +16,7 @@ function NumberList(props) {
         )
         : (<p>There are no numbers</p>)
     return (
-        <div>
+        <div className="number-list">
             <h2>{props.title}</h2>
             { numbers }
         </div>
