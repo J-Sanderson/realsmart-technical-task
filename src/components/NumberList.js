@@ -8,7 +8,12 @@ function NumberList(props) {
                 {
                     props.numbers.map(number => {
                         return (
-                            <li key={number}>{number}</li>
+                            <li key={number}>
+                                <label>
+                                    <input type="checkbox" name={number} />
+                                    <span>{number}</span>
+                                </label>
+                            </li>
                         );
                     })
                 }
