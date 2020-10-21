@@ -2,3 +2,7 @@
     max-height: 100%;
     overflow: auto;
 }
+
+h2 {
+    text-transform: capitalize;
+}

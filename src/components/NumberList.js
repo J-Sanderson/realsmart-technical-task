@@ -2,6 +2,11 @@ import React from 'react'
 import '../css/NumberList.css';
 
 function NumberList(props) {
+
+    const handleChange = (e) => {
+        props.togglePending(props.type, e.target.id, e.target.checked);
+    }
+
     const numbers = props.numbers.length
         ? (
             <ul>
@@ -10,7 +15,7 @@ function NumberList(props) {
                         return (
                             <li key={number}>
                                 <label>
-                                    <input type="checkbox" name={number} />
+                                    <input type="checkbox" id={number} onChange={handleChange} />
                                     <span>{number}</span>
                                 </label>
                             </li>
@@ -22,8 +27,10 @@ function NumberList(props) {
         : (<p>There are no numbers</p>)
     return (
         <div className="number-list">
-            <h2>{props.title}</h2>
-            { numbers }
+            <h2>{props.type} numbers</h2>
+            <div>
+                { numbers }
+            </div>
         </div>
     )
 }

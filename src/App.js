@@ -8,6 +8,8 @@ class App extends Component {
   state = {
     unused: [],
     used: [],
+    usedPending: [],
+    unusedPending: [],
   };
 
   componentDidMount = () => {
@@ -20,6 +22,15 @@ class App extends Component {
     });
   }
 
+  togglePending = (type, number, state) => {
+    let pending = state 
+      ? [...this.state[`${type}Pending`], number]
+      : this.state[`${type}Pending`].filter(item => item !== number);
+    this.setState({
+      [`${type}Pending`]: pending,
+    });
+  }
+
   render() {
     return (
       <div className="App">
@@ -27,12 +38,20 @@ class App extends Component {
           <h1>realsmart Technical Task</h1>
         </header>
         <main className="container">
-          <NumberList title="Unused numbers" numbers={this.state.unused} />
+          <NumberList 
+            type="unused"
+            numbers={this.state.unused}
+            togglePending={this.togglePending}
+          />
           <div className="controls">
             <button>Add to used</button>
             <button>Add to unused</button>
           </div>
-          <NumberList title="Used numbers" numbers={this.state.used} />
+          <NumberList  
+            type="used"
+            numbers={this.state.used}
+            togglePending={this.togglePending}
+          />
         </main>
       </div>
     );
