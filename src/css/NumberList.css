@@ -14,5 +14,56 @@
 }
 
 .item {
-    display: block;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0.5rem;
+}
+
+.item:nth-child(even) {
+    background: var(--lightest);
+}
+
+.item:nth-child(odd) {
+    background: var(--light);
+}
+
+.box {
+    display: inline-block;
+    background: var(--darkest);
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 1rem;
+    border: 2px solid transparent;
+    border-radius: 3px;
+}
+
+input[type=checkbox] {
+    width: 0;
+    height: 0;
+    opacity: 0;
+}
+
+input[type=checkbox]:focus + .box,
+.box:hover {
+    border-color: var(--mid);
+}
+
+input[type=checkbox]:checked + .box:after {
+    color: var(--lightest);
+    content: '✔';
+    margin-left: 0.4rem;
+}
+
+@media screen and (max-width: 800px) {
+
+    .number-list {
+        height: 33%;
+    }
+
+    .number-list > h2 {
+        font-size: 1.2rem;
+        height: 2rem;
+    }
+    
 }
