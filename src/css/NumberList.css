@@ -54,3 +54,16 @@ input[type=checkbox]:checked + .box:after {
     content: '✔';
     margin-left: 0.4rem;
 }
+
+@media screen and (max-width: 800px) {
+
+    .number-list {
+        height: 33%;
+    }
+
+    .number-list > h2 {
+        font-size: 1.2rem;
+        height: 2rem;
+    }
+    
+}
