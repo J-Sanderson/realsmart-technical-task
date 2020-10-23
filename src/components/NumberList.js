@@ -18,7 +18,8 @@ function NumberList(props) {
                             id={number} 
                             onChange={handleChange} 
                         />
-                        <span>{number}</span>
+                        <span className="box" />
+                        <span className="label">{number}</span>
                     </label>
                 );
             })

@@ -4,22 +4,52 @@
 }
 
 header {
+  background: var(--dark);
   height: 5rem;
+  padding: 0 2rem;
+}
+
+header h1 {
+  margin: 0;
+  line-height: 5rem;
 }
 
 .container {
+  background: var(--dark);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
-  height: calc(100vh - 6.5rem);
+  height: 60vh;
+  max-width: 50rem;
+  margin: 5rem auto;
+  padding: 1.5rem;
+  border-radius: 1rem;
 }
 
 .container > div {
-  flex-grow: 1;
+  flex: 1 0 auto;
 }
 
-.container > .controls {
+.controls {
   flex-grow: 0;
   align-self: center;
   text-align: center;
+  margin: 1rem;
+}
+
+.controls > button {
+  display: block;
+  margin: 2rem auto;
+  background: var(--light);
+  border: 2px solid transparent;
+  border-radius: 0.5rem;  
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+}
+
+.controls > button:hover,
+.controls > button:focus {
+  outline: none;
+  border-color: var(--darkest);
 }
