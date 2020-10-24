@@ -59,7 +59,7 @@ class App extends Component {
           <h1>realsmart Technical Task</h1>
         </header>
         <main className="container">
-          <NumberList 
+          <NumberList
             type="unused"
             numbers={this.state.unused}
             togglePending={this.togglePending}
