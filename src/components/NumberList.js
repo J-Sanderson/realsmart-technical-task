@@ -18,15 +18,15 @@ function NumberList(props) {
                             id={number} 
                             onChange={handleChange} 
                         />
-                        <span className="box" />
-                        <span className="label">{number}</span>
+                        <span key={`checkbox-${number}`} className="box" />
+                        <span key={`label-${number}`} className="label">{number}</span>
                     </label>
                 );
             })
         )
         : (<p>There are no numbers</p>)
     return (
-        <div className="number-list">
+        <div className="number-list" data-testid={props.type}>
             <h2>{props.type} numbers</h2>
             <div>
                 { numbers }
