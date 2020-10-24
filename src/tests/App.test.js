@@ -1,6 +1,6 @@
 import React from 'react';
 import { fireEvent, render } from '@testing-library/react';
-import App from './App';
+import App from '../components/App';
 
 test('renders panels and buttons', () => {
   const { getByTestId, getByText } = render(<App />);
