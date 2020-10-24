@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import './css/App.css';
+import '../css/App.css';
 
-import NumberList from './components/NumberList';
+import NumberList from './NumberList';
 
 class App extends Component {
 
