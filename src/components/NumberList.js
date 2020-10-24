@@ -11,7 +11,7 @@ function NumberList(props) {
         ? (
             props.numbers.map(number => {
                 return (
-                    <label className="item">
+                    <label key={`wrapper-${number}`} className="item">
                         <input
                             key={number} 
                             type="checkbox" 
